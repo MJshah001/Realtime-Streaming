@@ -32,15 +32,20 @@ In today’s fast-paced digital world, real-time sentiment analysis has become a
 
 ```bash
 .
-├── Dockerfile.spark        # Docker setup for Spark
-├── docker-compose.yml      # Docker Compose setup for all services
-├── src
-│   ├── streaming-socket.py # Python script for streaming data via TCP sockets
-│   ├── spark-streaming.py  # PySpark script for processing the data stream
-│   ├── config.py           # Configuration file for Kafka, OpenAI, etc.
-│   └── requirements.txt    # Python dependencies
+│
+src
+├── config
+│   └── config.py           # Configuration file for Kafka, OpenAI, etc.
 ├── datasets
 │   └── yelp_academic_dataset_review.json # Yelp reviews dataset (sample)
+├── jobs
+│   ├── streaming-socket.py # Python script for streaming data via TCP sockets
+│   └──spark-streaming.py  # PySpark script for processing the data stream
+├── schemas
+│   └── reviews.schema.avsc # Schema for kafka data input 
+├── Dockerfile.spark        # Docker setup for Spark
+├── docker-compose.yml      # Docker Compose setup for all services
+├── requirements.txt        # Python dependencies
 └── README.md               # Project README (you're here!)
 ```
 
