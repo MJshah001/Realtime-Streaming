@@ -1,11 +1,12 @@
-# Real-Time Sentiment Analysis Pipeline  
-### 📊 Analyzing Customer Sentiment with Apache Spark, OpenAI, Kafka, and Elasticsearch
-
-![Project Architecture](path-to-your-architecture-image)  
-*Figure: End-to-End Architecture of Real-Time Sentiment Analysis Pipeline*
+# Realtime Data Streaming With TCP Socket, Apache Spark, OpenAI LLM, Kafka and Elasticsearch 
+###  Analyzing Customer Sentiment 
 
 ## 🌟 Project Overview  
 In today’s fast-paced digital world, real-time sentiment analysis has become a critical tool for understanding public opinion, whether it’s gauging reactions during live events or responding to customer feedback on e-commerce platforms. This project builds an end-to-end, scalable pipeline to process millions of customer reviews in real-time using advanced technologies such as Spark, Kafka, and OpenAI LLM. The project delivers actionable insights from large-scale textual data in sub-second time, with results visualized through Elasticsearch and Kibana.
+
+## 📊 Project Architecture  
+![Project Architecture](https://github.com/MJshah001/Realtime-Streaming/blob/main/Assets/Project%20Architecture%20Realtime%20Sentiment%20Analysis.jpg)  
+*Figure: End-to-End Architecture of Real-Time Sentiment Analysis Pipeline*
 
 ## 🚀 Key Features  
 - **Real-Time Data Processing**: Ingests and processes over 7 million customer reviews using Kafka and Spark Streaming.
@@ -57,14 +58,15 @@ In today’s fast-paced digital world, real-time sentiment analysis has become a
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/yourusername/real-time-sentiment-analysis-pipeline.git
-   cd real-time-sentiment-analysis-pipeline
+   git clone https://github.com/MJshah001/Realtime-Streaming.git
+   cd Realtime-Streaming
+   cd src
    ```
 
 2. **Setup Docker Containers**  
    Run the following command to start up all services, including Spark, Kafka, and Elasticsearch:  
    ```bash
-   docker-compose up --build
+   docker-compose up -d --build
    ```
 
 3. **Configure API Keys**  
@@ -74,32 +76,25 @@ In today’s fast-paced digital world, real-time sentiment analysis has become a
 4. **Start Streaming Data**  
    Execute the `streaming-socket.py` script to simulate real-time data streaming:
    ```bash
-   docker exec -it spark-master python src/streaming-socket.py
+   docker exec -it spark-master python3 /opt/bitnami/spark/jobs/streaming-socket.py
    ```
 
 5. **Run Spark Streaming Job**  
    Submit the PySpark job for real-time processing:
    ```bash
-   docker exec -it spark-master spark-submit --master spark://spark-master:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0 src/spark-streaming.py
+   docker exec -it spark-master /opt/bitnami/spark/bin/spark-submit  --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.2  --master spark://spark-master:7077  /opt/bitnami/spark/jobs/spark-streaming.py
    ```
 
 6. **Monitor Data and Sentiment Trends**  
-   Open Kibana to visualize and query real-time sentiment data indexed in Elasticsearch.  
-   Access Kibana through the Elasticsearch endpoint: `http://localhost:5601`.
+   USe Kibana to visualize and query real-time sentiment data indexed in Elasticsearch.  
 
-
-## 📊 Visualization
-
-Once the pipeline is up and running, you can view sentiment trends in real-time using Kibana. Customize your dashboard to monitor:
-- Overall sentiment trends
-- Top businesses by sentiment score
-- Daily or hourly sentiment breakdown
-
+<!--
 ## 📈 Performance & Results
 - **50% improvement** in data ingestion speed with Spark Streaming.
 - **25% increase** in sentiment analysis accuracy using OpenAI LLM.
 - Handled over **1,000 queries/second** with optimized Elasticsearch indexing.
 - Achieved **99.9% uptime** and seamless scalability using Docker.
+-->
 
 ## 🏆 Acknowledgements
 Special thanks to the open-source communities of Apache Spark, Kafka, and OpenAI for making this project possible.
