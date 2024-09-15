@@ -1,5 +1,4 @@
-# Realtime Data Streaming With TCP Socket, Apache Spark, OpenAI LLM, Kafka and Elasticsearch 
-###  Analyzing Customer Sentiment 
+# Realtime Data Streaming With TCP Socket, Apache Spark, OpenAI LLM, Kafka and Elasticsearch | Analyzing Customer Sentiment 
 
 ## 🌟 Project Overview  
 In today’s fast-paced digital world, real-time sentiment analysis has become a critical tool for understanding public opinion, whether it’s gauging reactions during live events or responding to customer feedback on e-commerce platforms. This project builds an end-to-end, scalable pipeline to process millions of customer reviews in real-time using advanced technologies such as Spark, Kafka, and OpenAI LLM. The project delivers actionable insights from large-scale textual data in sub-second time, with results visualized through Elasticsearch and Kibana.
