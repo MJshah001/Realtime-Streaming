@@ -3,10 +3,6 @@
 ## 🌟 Project Overview  
 In today’s fast-paced digital world, real-time sentiment analysis has become a critical tool for understanding public opinion, whether it’s gauging reactions during live events or responding to customer feedback on e-commerce platforms. This project builds an end-to-end, scalable pipeline to process millions of customer reviews in real-time using advanced technologies such as Spark, Kafka, and OpenAI LLM. The project delivers actionable insights from large-scale textual data in sub-second time, with results visualized through Elasticsearch and Kibana.
 
-## 📊 Project Architecture  
-![Project Architecture](https://github.com/MJshah001/Realtime-Streaming/blob/main/Assets/Project%20Architecture%20Realtime%20Sentiment%20Analysis.jpg)  
-*Figure: End-to-End Architecture of Real-Time Sentiment Analysis Pipeline*
-
 ## 🚀 Key Features  
 - **Real-Time Data Processing**: Ingests and processes over 7 million customer reviews using Kafka and Spark Streaming.
 - **Sentiment Analysis with OpenAI**: Analyzes customer sentiment (positive, neutral, negative) in real-time using OpenAI's GPT-3.5-turbo.
@@ -22,6 +18,10 @@ In today’s fast-paced digital world, real-time sentiment analysis has become a
 - **Python**: To glue the services and develop Spark Streaming and API integration logic.
 
 ## 🏗️ Project Architecture
+
+![Project Architecture](https://github.com/MJshah001/Realtime-Streaming/blob/main/Assets/Project%20Architecture%20Realtime%20Sentiment%20Analysis.jpg)  
+*Figure: End-to-End Architecture of Real-Time Sentiment Analysis Pipeline*
+
 1. **Data Ingestion**: Real-time customer reviews are streamed through TCP sockets.
 2. **Data Buffering**: Kafka handles the message queues to ensure a smooth flow of real-time data.
 3. **Data Processing**: Spark Streaming processes the incoming data, sending chunks of text to OpenAI for sentiment analysis.
